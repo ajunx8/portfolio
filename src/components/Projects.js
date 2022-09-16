@@ -11,7 +11,7 @@ export const Projects = () => {
         <Row>
           <Col>
             <h2>Projects</h2>
-            <p>I've worked on a variety of projects both individually & in collaboration with other developers.</p>
+            <p>I've worked on a variety of projects both individually and in collaboration with developers and UX designers.</p>
             <Row>
               {
                 ProjectData.map((project, index) => {

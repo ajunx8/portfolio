@@ -30,7 +30,7 @@ export const Skills = () => {
           <Col>
             <div className="skill-bx">
               <h2>My Skills</h2>
-              <p>Working on challenging projects forced me to learn a variety of languages & frameworks. Now I'm on a mission to gain a broader & deeper understanding of web development. </p>
+              <p>Working on challenging projects gave me the opportunity to learn a variety of languages and frameworks. Now I'm on a mission to gain a broader and deeper understanding of software development. </p>
             </div>
             <Carousel responsive={responsive} infinite={true} className='skill-slider'>
               <div className="item">
