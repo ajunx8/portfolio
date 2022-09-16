@@ -16,11 +16,3 @@ export const Banner = () => {
         </section>
     )
 }
-
-// learning how to harness software to delve deeper into our understanding of the Universe
-// Traversing the tumultuous trails of our past pioneers in the field of computer programming
-// Rewiring my brain to think algorithmically to unlock novel technologies
-// Chipping away at the iceberg of programming.
-// Branching out into the field of data analysis, machine learning and AI
-// Following a passion to program solutions for all fields of research
-

@@ -2,7 +2,6 @@ import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Col, Container, Row } from 'react-bootstrap';
-// import colorSharp from '../assets/img/color-sharp.png'
 
 export const Skills = () => {
   const responsive = {
@@ -70,7 +69,6 @@ export const Skills = () => {
           </Col>
         </Row>
       </Container>
-      {/* <img className='background-image-left' src={colorSharp} alt='color sharp'/> */}
     </section>
   )
 }

@@ -25,4 +25,3 @@ export const About  = () => {
     </section>
   )
 }
-
