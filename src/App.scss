@@ -419,10 +419,17 @@ nav.navbar .navbar-toggler-icon:after {
         font-size: 18px;
         letter-spacing: 0.8px;
         line-height: 1.5em;
+        text-align: left;
+        padding-bottom: 1em;
+    }
+
+    .email {
+        color: #0d6efd !important;
+        cursor: pointer;
     }
 
     .about-btn {
-        margin-top: 25px;
+        margin-top: 5px;
         font-size: 18px;
         background-color: transparent;
         color: #fff;
