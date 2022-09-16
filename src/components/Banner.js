@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Button, Row } from "react-bootstrap";
 
 export const Banner = () => {
     return (
@@ -7,11 +7,9 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
                         <h1>Adrian Greksa</h1>
-                        <p>Software Engineer</p>
-                        <p>Learning how to harness software to delve deeper into our understanding of the Universe.</p>
-                    </Col>
-                    <Col xs={12} md={6} xl={5}>
-                        <img alt='random pic' className="random-pic"></img>
+                        <p><strong>Software Engineer | Full-stack Developer</strong><br/>
+                        Learning how to harness software to delve deeper into our understanding of the Universe.</p>
+                        <Button href="#about" className="about-me-btn">About Me</Button>
                     </Col>
                 </Row>
             </Container>

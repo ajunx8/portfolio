@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Container, Row, Tab, Nav } from 'react-bootstrap'
 import { ProjectCard } from './ProjectCard'
 import ProjectData from './ProjectData'
-import colorSharp2 from '../assets/img/color-sharp2.png'
+// import colorSharp2 from '../assets/img/color-sharp2.png'
 import 'animate.css'
 
 export const Projects = () => {
@@ -80,7 +80,7 @@ export const Projects = () => {
           </Col>
         </Row>
       </Container>
-      <img className='background-image-right' src={colorSharp2} alt='background'></img>
+      {/* <img className='background-image-right' src={colorSharp2} alt='background'></img> */}
     </section>
   )
 }

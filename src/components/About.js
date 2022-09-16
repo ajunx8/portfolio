@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
-// import headshot from '../assets/img/headshot.jpeg'
+import headshot from '../assets/img/headshot.png'
 
 export const About  = () => {
   return (
@@ -8,7 +8,7 @@ export const About  = () => {
       <Container>
         <Row>
           <Col className='about-img' sm={4}>
-            {/* <img src={headshot} alt="Adrian" className='headshot'/> */}
+            <img src={headshot} alt="Adrian" className='headshot'/>
           </Col>
           <Col className='about-me-txt'>
             <h1>Hey! My name is <span>Adrian</span></h1>

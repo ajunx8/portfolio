@@ -17,7 +17,15 @@
     font-weight: 400;
 }
 
+@font-face {
+    font-family: Nectomon;
+    src: url('./assets/font/NectoMono-Regular.otf');
+    font-weight: 400;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+// DEFAULT CSS 
 
 * {
     margin: 0;
@@ -27,13 +35,16 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 75px;
 }
 
 body {
+    font-weight: 400;
     overflow-x: hidden;
     position: relative;
-    background-color: #121212;
-    color: #fff;
+    background-color: #121212 !important;
+    color: #fff !important;
+    font-family: 'Nectomon', sans-serif !important;
 
     h1 {
         font-weight: 700;
@@ -82,7 +93,7 @@ body {
         outline: none;
     }
 
-    @media (min-width: 1700px) {
+    @media (min-width:1700px) {
         main .container {
             max-width: 100%;
             padding: 0 150px;
@@ -125,7 +136,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
     letter-spacing: 0.8px;
     padding: 0 25px;
     font-size: 18px;
-    opacity: 0.60;
+    font-weight: 600;
 
     @media screen and (max-width: 991px) {
         line-height: 60px;
@@ -247,18 +258,21 @@ nav.navbar .navbar-toggler-icon:after {
 }
 
 .navbar-logo {
-    width: 80px;
+    width: 200px;
+    height: 70px;
+    object-fit: cover;
 }
 
 /************ Banner Css ************/
 .banner {
     margin-top: 0;
     padding: 15% 0;
-    background-image: url('./assets/img/banner-bg.png');
+    background-image: url('./assets/img/banner-bg.jpg');
     background-position: top center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    
 
     @media screen and (max-width: 768px) {
         padding: 240px 0 150px 0;
@@ -293,14 +307,17 @@ nav.navbar .navbar-toggler-icon:after {
 }
 
 .banner p {
-    color: #B8B8B8;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.07),0 2px 4px rgba(0,0,0,.07),0 4px 8px rgba(0,0,0,.07),0 8px 16px rgba(0,0,0,.07),0 16px 32px rgba(0,0,0,.07),0 32px 64px rgba(0,0,0,.07);
+    color: #fff;
+    background-color: #121212ab;
     font-size: 18px;
     letter-spacing: 0.8px;
     line-height: 1.5em;
     width: 96%;
 }
 
-.banner .learn-about-me-btn {
+.banner .about-me-btn {
     color: #fff;
     font-weight: 700;
     font-size: 20px;
@@ -308,17 +325,14 @@ nav.navbar .navbar-toggler-icon:after {
     letter-spacing: 0.8px;
     display: flex;
     align-items: center;
-}
+    padding-left: 12px;
+    width: fit-content;
+    background-color: #4A2FBD;
+    &:hover {
+        background-color: #4A2FBD;
+        color: #fff;
 
-.banner .learn-about-me-btn svg {
-    font-size: 25px;
-    margin-left: 10px;
-    transition: 0.3s ease-in-out;
-    line-height: 1;
-}
-
-.banner .learn-about-me-btn:hover svg {
-    margin-left: 25px;
+    }
 }
 
 .banner .astro-img {
