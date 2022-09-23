@@ -46,7 +46,7 @@ export const NavBar = () => {
             <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => handleClick('projects')}>Projects</Nav.Link>
             <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => handleClick('contact')}>Contact</Nav.Link>
           </Nav>
-        <Button className='resume-btn' target='_blank' href='https://drive.google.com/file/d/1vU9WtBzxzhvs4NJR2IMUDhGRIVeNcbmy/view'>Resumé</Button>
+        <Button className='resume-btn' target='_blank' href='https://drive.google.com/file/d/1JuutLxDXWkxWOCeWuGeg74dryzscnSDi/view?usp=sharing'>Resumé</Button>
           <span className='navbar-text'>
             <div className='social-icon'>
               <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/adriangreksa"><img src={linkedinIcon} alt='linkedIn logo'/></a>
