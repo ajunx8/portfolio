@@ -18,7 +18,7 @@ export const About  = () => {
             <p>Before the course, I worked as a Machinist in plastics manufacturing where I learned to take pride and responsibility in the work that I put out. Working in an environment with unpredictable deadlines taught me to work cohesively within a team.</p>
             <p>During that time, I discovered Andrew Ng's online course on Machine learning where I developed analytical thinking and gained a growing interest in programming and algorithms.</p>
             <p>As of September 2022, I'm open to job opportunities so please feel free to <a className="email" href="mailto:adrian.greksa@gmail.com?body=What would you like to say?">email</a> or connect with me via <a href="https://www.linkedin.com/in/adriangreksa">LinkedIn</a></p>
-            <Button className='about-btn' target='_blank' href='https://drive.google.com/file/d/17FWOg0atmpiW9arEzR79whURJTcAGmx-/view?usp=sharing'>View Resumé</Button>
+            <Button className='about-btn' target='_blank' href='https://drive.google.com/file/d/1iAMz-dAtUbdBXk7F3llha5msXay48-qj/view?usp=sharing'>View Resumé</Button>
           </Col>
         </Row>
       </Container>
