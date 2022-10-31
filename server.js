@@ -46,6 +46,9 @@ router.post("/contact", (req, res) => {
            <p>Phone: ${phone}</p>
            <p>${message}</p>`,
   };
+
+  console.log("Attempting to send email", mail);
+  
   contactEmail.sendMail(mail, (error) => {
     if (error) {
       res.json(error);
