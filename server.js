@@ -15,6 +15,13 @@ app.use(express.json());
 app.use("/", router);
 app.listen(port, () => console.log(`Server Running On Port ${port}`));
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('build'))
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
+  })
+}
+
 const createTransporter = async () => {
   const oauth2Client = new OAuth2(
       process.env.CLIENT_ID,
