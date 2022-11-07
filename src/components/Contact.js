@@ -22,17 +22,13 @@ export const Contact = () => {
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setButtonText('Sending...')
+    e.preventDefault();
+    setButtonText('Sending...');
     let response = await fetch(`${process.env.REACT_APP_API_URL}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json;charset=utf-8' },
       body: JSON.stringify(formDetails)
     });
-
-    // .then(res => res.json())
-    // .then(results => {
-
     setButtonText('Send');
     let result = await response.json();
     setFormDetails(formInitalDetails);
@@ -41,8 +37,6 @@ export const Contact = () => {
     } else {
       setStatus({ success: false, message: 'Something went wrong, please try again later' })
     }
-
-    // })
   };
 
   return (
