@@ -57,7 +57,7 @@ const createTransporter = async () => {
   return transporter;
 };
 
-router.post("/contact", (req, res) => {
+router.post(`${process.env.REACT_APP_API_URL}`, (req, res) => {
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
