@@ -31,6 +31,7 @@ export const Contact = () => {
     });
     setButtonText('Send');
     let result = await response.json();
+    console.log(result);
     setFormDetails(formInitalDetails);
     if (result.code === 200) {
       setStatus({ success: true, message: "Message sent successfully" })

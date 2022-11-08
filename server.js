@@ -16,6 +16,7 @@ app.use("/", router);
 app.listen(port, () => console.log(`Server Running On Port ${port}`));
 
 if (process.env.NODE_ENV === 'production') {
+  console.log('process.env is "production"')
   app.use(express.static('build'))
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
