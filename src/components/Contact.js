@@ -8,7 +8,7 @@ export const Contact = () => {
     email: '',
     phone: '',
     message: ''
-  }
+  };
 
   const [formDetails, setFormDetails] = useState(formInitalDetails)
   const [buttonText, setButtonText] = useState('Send')
@@ -24,9 +24,9 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText('Sending...');
-    let response = await fetch(`${process.env.REACT_APP_API_URL}`, {
+    let response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formDetails)
     });
     setButtonText('Send');

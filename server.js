@@ -24,41 +24,55 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const createTransporter = async () => {
-  const oauth2Client = new OAuth2(
+  try {
+    console.log("@@@@@@@@@ 1")
+    const oauth2Client = new OAuth2(
       process.env.CLIENT_ID,
       process.env.CLIENT_SECRET,
       "https://developers.google.com/oauthplayground"
-  );
+    );
+    console.log("@@@@@@@@@ 2", oauth2Client)
 
-  oauth2Client.setCredentials({
+    oauth2Client.setCredentials({
       refresh_token: process.env.REFRESH_TOKEN
-  });
+    });
+    console.log("$$$$$$$$$ 1 client id", process.env.CLIENT_ID)
+    console.log("$$$$$$$$$ 2 client secret", process.env.CLIENT_SECRET)
+    console.log("$$$$$$$$$ 3 refresh token", process.env.REFRESH_TOKEN)
 
-  const accessToken = await new Promise((resolve, reject) => {
+    const accessToken = await new Promise((resolve, reject) => {
       oauth2Client.getAccessToken((err, token) => {
-          if (err) {
-              reject();
-          }
-          resolve(token);
+        console.log("######## 1")
+        if (err) {
+          console.log("######## 2", err)
+          reject();
+        }
+        resolve(token);
       });
-  });
+    });
+    console.log("@@@@@@@@@ 4")
 
-  const transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-          type: "OAuth2",
-          user: process.env.EMAIL,
-          accessToken,
-          clientId: process.env.CLIENT_ID,
-          clientSecret: process.env.CLIENT_SECRET,
-          refreshToken: process.env.REFRESH_TOKEN
+        type: "OAuth2",
+        user: process.env.EMAIL,
+        accessToken,
+        clientId: process.env.CLIENT_ID,
+        clientSecret: process.env.CLIENT_SECRET,
+        refreshToken: process.env.REFRESH_TOKEN
       }
-  });
+    });
+    console.log("@@@@@@@@@ 5")
 
-  return transporter;
+    return transporter;
+  } catch (err) {
+    console.log("Error running transporter", err);
+    throw err;
+  }
 };
 
-router.post(`${process.env.REACT_APP_API_URL}`, (req, res) => {
+router.post("/contact", (req, res) => {
   const name = req.body.firstName + req.body.lastName;
   const email = req.body.email;
   const message = req.body.message;
@@ -66,26 +80,33 @@ router.post(`${process.env.REACT_APP_API_URL}`, (req, res) => {
 
   const mail = {
     from: email,
-    to: "adrian.greksa@gmail.com",
+    to: process.env.EMAIL,
     subject: "Portfolio Form Submission",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Phone: ${phone}</p>
            <p>Message: ${message}</p>`,
   };
-  
+
   const sendEmail = async (emailOptions) => {
-    let emailTransporter = await createTransporter();
-    await emailTransporter.sendMail(emailOptions, (error) => {
-      if (error) {
-        res.json(error);
-      } else {
-        res.json({ code: 200 });
-      }
-    });
+    try {
+      let emailTransporter = await createTransporter();
+      console.log("@@@@@@@ 2", emailTransporter)
+      await emailTransporter.sendMail(emailOptions, (error) => {
+        if (error) {
+          res.json(error);
+        } else {
+          res.json({ code: 200 });
+        }
+      });
+      console.log("@@@@@@@@@@ 3")
+    } catch (err) {
+      console.log("Error Running sendEmail", err);
+      throw err;
+    }
   }
 
-  sendEmail(mail);
+  return sendEmail(mail);
 
   // contactEmail.sendMail(mail, (error) => {
   //   if (error) {
