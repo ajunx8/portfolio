@@ -3,8 +3,7 @@ import { useState } from "react";
 
 export const Contact = () => {
   const formInitalDetails = {
-    firstName: '',
-    lastName: '',
+    fullName: '',
     email: '',
     phone: '',
     message: ''
@@ -43,24 +42,21 @@ export const Contact = () => {
   return (
     <section className="contact" id="contact">
       <Container>
-        <Row className='align-items-center'>
-          <Col>
-            <h2>Get in Touch!</h2>
+        <h2>Get in Touch!</h2>
+        <Row className="justify-content-md-center">
+          <Col md="auto">
             <form onSubmit={handleSubmit}>
-              <Row>
-                <Col sm={6} className='px-1'>
-                  <input type="text" value={formDetails.firstName} placeholder='First Name' onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+              <Row className="align-items-center flex-column">
+                <Col>
+                  <input type="text" value={formDetails.fullName} placeholder='Full Name' onChange={(e) => onFormUpdate('fullName', e.target.value)} />
                 </Col>
-                <Col sm={6} className='px-1'>
-                  <input type="text" value={formDetails.lastName} placeholder='Last Name' onChange={(e) => onFormUpdate('lastName', e.target.value)} />
-                </Col>
-                <Col sm={6} className='px-1'>
+                <Col>
                   <input type="email" value={formDetails.email} placeholder='Email Address' onChange={(e) => onFormUpdate('email', e.target.value)} />
                 </Col>
-                <Col sm={6} className='px-1'>
+                <Col>
                   <input type="telephone" value={formDetails.phone} placeholder='Phone Number' onChange={(e) => onFormUpdate('phone', e.target.value)} />
                 </Col>
-                <Col className='px-1'>
+                <Col md="auto">
                   <textarea rows="6" value={formDetails.message} placeholder='Message' onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
                   {
                     status.message &&
@@ -68,6 +64,8 @@ export const Contact = () => {
                       <p className='light contact-msg'>{status.message}</p>
                     </Col>
                   }
+                </Col>
+                <Col>
                   <button type='submit'><span>{buttonText}</span></button>
                 </Col>
               </Row>

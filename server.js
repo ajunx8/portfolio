@@ -107,32 +107,4 @@ router.post("/contact", (req, res) => {
   }
 
   return sendEmail(mail);
-
-  // contactEmail.sendMail(mail, (error) => {
-  //   if (error) {
-  //     res.json(error);
-  //   } else {
-  //     res.json({ code: 200 });
-  //   }
-  // });
 });
-
-// const contactEmail = nodemailer.createTransport({
-//   service: 'gmail',
-//   auth: {
-//     type: "OAuth2",
-//     user: process.env.EMAIL,
-//     accessToken,
-//     clientId: process.env.CLIENT_ID,
-//     clientSecret: process.env.CLIENT_SECRET,
-//     refreshToken: process.env.REFRESH_TOKEN
-//   },
-// });
-
-// contactEmail.verify((error) => {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Ready to Send");
-//   }
-// });
