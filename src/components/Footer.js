@@ -11,7 +11,6 @@ export const Footer = () => {
           <Col sm={6}>
           </Col>
           <Col sm={6} className='text-center footer-icons'>
-            <p>This portfolio was created using React</p>
             <div className="social-icon footer-icon">
               <a target='_blank' rel="noreferrer" href="https://www.linkedin.com/in/adriangreksa"><img src={linkedinIcon} alt="icon" /></a>
               <a target='_blank' rel="noreferrer" href="https://github.com/ajunx8"><img src={githubIcon} alt="icon" /></a>
